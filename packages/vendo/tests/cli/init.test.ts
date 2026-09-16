@@ -1014,6 +1014,7 @@ describe("vendo init (zero-question)", () => {
     expect(await run(root, sink)).toBe(0);
     const logs = sink.logs.join("\n");
     expect(logs).toContain("No model key yet");
+    expect(logs).toContain('models: { default: anthropic("claude-sonnet-5") }');
     expect(logs).toContain("vendo login");
     // The Cloud offer runs FIRST (before theme capture and the wired summary);
     // the end of the run keeps only the short one-line reminder.
